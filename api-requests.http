@@ -1,0 +1,269 @@
+@baseUrl = http://localhost:8080/api/v1
+
+### ===== ADVERTISEMENT API =====
+
+## ADD USER
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "email": "testUser@mail.ru",
+    "password": "testPassword",
+    "role" : "USER",
+    "lastName" : "Иванов",
+    "firstName" : "Иван",
+    "address" : "г. Москва, ул. Пушкина, д. 1, кв. 1",
+    "rating" : 5.0
+}
+
+
+### GET ALL ADVERTISEMENTS
+GET {{baseUrl}}/advertisement
+Content-Type: application/json
+
+### GET ADVERTISEMENT BY ID
+GET {{baseUrl}}/advertisement/1
+Content-Type: application/json
+
+### ADD ADVERTISEMENT
+POST {{baseUrl}}/advertisement
+Content-Type: application/json
+
+{
+  "name": "Товар тестовый",
+  "description": "Описание тестового товара для проверки API",
+  "ownerId": 2
+}
+
+### UPDATE ADVERTISEMENT
+PUT {{baseUrl}}/advertisement
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Товар тестовый (обновлено)",
+  "description": "Обновленное описание тестового товара",
+  "ownerId": 1
+}
+
+### DELETE ADVERTISEMENT
+DELETE {{baseUrl}}/advertisement/1
+Content-Type: application/json
+
+
+### ===== CART API =====
+
+### GET ALL CARTS
+GET {{baseUrl}}/cart
+Content-Type: application/json
+
+### GET CART BY ID
+GET {{baseUrl}}/cart/1
+Content-Type: application/json
+
+### ADD CART
+POST {{baseUrl}}/cart
+Content-Type: application/json
+
+{
+  "userId": 1
+}
+
+### UPDATE CART
+PUT {{baseUrl}}/cart
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userId": 1
+}
+
+### DELETE CART
+DELETE {{baseUrl}}/cart/1
+Content-Type: application/json
+
+
+### ===== CART ADVERTISEMENT API =====
+
+### GET ALL CART ADVERTISEMENTS
+GET {{baseUrl}}/cart-advertisement
+Content-Type: application/json
+
+### GET CART ADVERTISEMENT BY ID
+GET {{baseUrl}}/cart-advertisement/1
+Content-Type: application/json
+
+### ADD CART ADVERTISEMENT
+POST {{baseUrl}}/cart-advertisement
+Content-Type: application/json
+
+{
+  "cartId": 1,
+  "advertisementId": 1
+}
+
+### UPDATE CART ADVERTISEMENT
+PUT {{baseUrl}}/cart-advertisement
+Content-Type: application/json
+
+{
+  "id": 1,
+  "cartId": 1,
+  "advertisementId": 2
+}
+
+### DELETE CART ADVERTISEMENT
+DELETE {{baseUrl}}/cart-advertisement/1
+Content-Type: application/json
+
+
+### ===== PAYMENT METHOD API =====
+
+### GET ALL PAYMENT METHODS
+GET {{baseUrl}}/payment-method
+Content-Type: application/json
+
+### GET PAYMENT METHOD BY ID
+GET {{baseUrl}}/payment-method/1
+Content-Type: application/json
+
+### ADD PAYMENT METHOD
+POST {{baseUrl}}/payment-method
+Content-Type: application/json
+
+{
+  "name": "Банковская карта",
+  "image": "card_icon.png"
+}
+
+### UPDATE PAYMENT METHOD
+PUT {{baseUrl}}/payment-method
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Банковская карта Visa/MasterCard",
+  "image": "card_icon_updated.png"
+}
+
+### DELETE PAYMENT METHOD
+DELETE {{baseUrl}}/payment-method/1
+Content-Type: application/json
+
+
+### ===== SHIPPING METHOD API =====
+
+### GET ALL SHIPPING METHODS
+GET {{baseUrl}}/shipping-method
+Content-Type: application/json
+
+### GET SHIPPING METHOD BY ID
+GET {{baseUrl}}/shipping-method/1
+Content-Type: application/json
+
+### ADD SHIPPING METHOD
+POST {{baseUrl}}/shipping-method
+Content-Type: application/json
+
+{
+  "name": "Курьерская доставка",
+  "price": 299.99
+}
+
+### UPDATE SHIPPING METHOD
+PUT {{baseUrl}}/shipping-method
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Экспресс курьерская доставка",
+  "price": 499.99
+}
+
+### DELETE SHIPPING METHOD
+DELETE {{baseUrl}}/shipping-method/1
+Content-Type: application/json
+
+
+### ===== SHIP API =====
+
+### GET ALL SHIPS
+GET {{baseUrl}}/ship
+Content-Type: application/json
+
+### GET SHIP BY ID
+GET {{baseUrl}}/ship/1
+Content-Type: application/json
+
+### ADD SHIP
+POST {{baseUrl}}/ship
+Content-Type: application/json
+
+{
+  "name": "Заказ #001",
+  "shippingMethodId": 1,
+  "paymentMethodId": 1,
+  "receiverId": 1,
+  "address": "г. Москва, ул. Тестовая, д. 1, кв. 1"
+}
+
+### UPDATE SHIP
+PUT {{baseUrl}}/ship
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Заказ #001 (обновлено)",
+  "shippingMethodId": 1,
+  "paymentMethodId": 1,
+  "receiverId": 1,
+  "address": "г. Москва, ул. Тестовая, д. 1, кв. 2"
+}
+
+### DELETE SHIP
+DELETE {{baseUrl}}/ship/1
+Content-Type: application/json
+
+
+### ===== USER API =====
+
+### GET ALL USERS
+GET {{baseUrl}}/user
+Content-Type: application/json
+
+### GET USER BY ID
+GET {{baseUrl}}/user/1
+Content-Type: application/json
+
+### ADD USER
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "role": "USER",
+  "email": "testUser@mail.ru",
+  "password": "testPassword",
+  "lastName": "Иванов",
+  "firstName": "Иван",
+  "address": "г. Москва, ул. Пушкина, д. 1, кв. 1",
+  "rating": 5.0
+}
+
+### UPDATE USER
+PUT {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "id": 1,
+  "role": "USER",
+  "email": "testUser@mail.ru",
+  "password": "testPassword",
+  "lastName": "Петров",
+  "firstName": "Петр",
+  "address": "г. Москва, ул. Лермонтова, д. 2, кв. 5",
+  "rating": 4.5
+}
+
+### DELETE USER
+DELETE {{baseUrl}}/user/1
+Content-Type: application/json
