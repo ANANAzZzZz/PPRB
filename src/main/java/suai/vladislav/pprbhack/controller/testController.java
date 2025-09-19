@@ -10,6 +10,6 @@ public class testController {
 
     @GetMapping("/")
     public String test(){
-        return "First build is successful";
+        return "First build is successful v2";
     }
 }
