@@ -2,6 +2,7 @@ package suai.vladislav.pprbhack.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import suai.vladislav.pprbhack.enums.UserRole;
 
 import java.util.List;
 
@@ -41,6 +42,6 @@ public class User extends BaseModel {
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Advertisement> advertisements;
 
-    @OneToMany(mappedBy = "receiver", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "receiverId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Ship> receivedShips;
 }

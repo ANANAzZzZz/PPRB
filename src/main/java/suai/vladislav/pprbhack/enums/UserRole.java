@@ -1,4 +1,4 @@
-package suai.vladislav.pprbhack.model;
+package suai.vladislav.pprbhack.enums;
 
 public enum UserRole {
     USER,
