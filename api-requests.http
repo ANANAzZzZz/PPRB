@@ -1,4 +1,4 @@
-@baseUrl = http://localhost:8080/api/v1
+@baseUrl = localhost:8080/api/v1/
 
 ### ===== ADVERTISEMENT API =====
 
@@ -43,7 +43,7 @@ Content-Type: application/json
   "id": 1,
   "name": "Товар тестовый (обновлено)",
   "description": "Обновленное описание тестового товара",
-  "ownerId": 1
+  "ownerId": 2
 }
 
 ### DELETE ADVERTISEMENT
@@ -66,7 +66,7 @@ POST {{baseUrl}}/cart
 Content-Type: application/json
 
 {
-  "userId": 1
+  "userId": 2
 }
 
 ### UPDATE CART
@@ -75,7 +75,7 @@ Content-Type: application/json
 
 {
   "id": 1,
-  "userId": 1
+  "userId": 2
 }
 
 ### DELETE CART
@@ -98,8 +98,8 @@ POST {{baseUrl}}/cart-advertisement
 Content-Type: application/json
 
 {
-  "cartId": 1,
-  "advertisementId": 1
+  "cartId": 2,
+  "advertisementId": 2
 }
 
 ### UPDATE CART ADVERTISEMENT
@@ -232,7 +232,7 @@ GET {{baseUrl}}/user
 Content-Type: application/json
 
 ### GET USER BY ID
-GET {{baseUrl}}/user/1
+GET {{baseUrl}}/user/2
 Content-Type: application/json
 
 ### ADD USER

@@ -38,7 +38,7 @@ public class BaseModel {
 
     @CreatedDate
     @JsonIgnore
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable = false)
+    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @LastModifiedDate
