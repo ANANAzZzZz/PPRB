@@ -36,6 +36,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto addUser(UserDto userDto) {
+        if (userRepository.findByEmail(userDto.email()).isPresent()) {
+            throw new CommonPPRBApiException(ErrorType.USER_ALREADY_EXISTS, userDto.email());
+        }
+
         User user = userMapper.toEntity(userDto);
         User savedUser = userRepository.save(user);
         return userMapper.toDto(savedUser);
